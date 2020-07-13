@@ -96,7 +96,7 @@ class BotHandler:
             bot.send_message(message.chat.id, info)             
             msg = bot.send_message(message.chat.id, data.ACTIONS)
             logging.info(f'Info about cipher ' +
-                f'{data.CIPHER_NAMES[int(message.text) - 1].upper()} was sent successfully')
+                f'{data.CIPHER_NAMES[int(BotHandler.cipher.value) - 1].upper()} was sent successfully')
             bot.register_next_step_handler(msg, BotHandler.select_action)
         elif (message.text == '4'):
             BotHandler.send_possible_ciphers(message)
